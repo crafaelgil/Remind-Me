@@ -12,6 +12,7 @@
 		CD24A871267A276C00B69192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD24A870267A276C00B69192 /* Assets.xcassets */; };
 		CD24A874267A276C00B69192 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD24A873267A276C00B69192 /* Preview Assets.xcassets */; };
 		CD24A87E267A29CA00B69192 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A87D267A29CA00B69192 /* Task.swift */; };
+		CD24A881267A386000B69192 /* SingleTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A880267A386000B69192 /* SingleTaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		CD24A870267A276C00B69192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD24A873267A276C00B69192 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD24A87D267A29CA00B69192 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		CD24A880267A386000B69192 /* SingleTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		CD24A86B267A276900B69192 /* Remind Me */ = {
 			isa = PBXGroup;
 			children = (
+				CD24A87F267A383B00B69192 /* ViewModel */,
 				CD24A87C267A29B500B69192 /* Model */,
 				CD24A87B267A29A100B69192 /* Views */,
 				CD24A86C267A276900B69192 /* Remind_MeApp.swift */,
@@ -84,6 +87,14 @@
 				CD24A87D267A29CA00B69192 /* Task.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CD24A87F267A383B00B69192 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD24A880267A386000B69192 /* SingleTaskViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD24A86F267A276900B69192 /* TaskListView.swift in Sources */,
+				CD24A881267A386000B69192 /* SingleTaskViewModel.swift in Sources */,
 				CD24A87E267A29CA00B69192 /* Task.swift in Sources */,
 				CD24A86D267A276900B69192 /* Remind_MeApp.swift in Sources */,
 			);
