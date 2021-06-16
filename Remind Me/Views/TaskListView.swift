@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct TaskListView: View {
+    @ObservedObject var tasksListVM = TasksListViewModel()
     let tasks = testDataTasks
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                List(tasks) { task in
-                    SingleTaskView(task: task)
+                List(tasksListVM.tasksListViewModel) { singleTaskVM in
+                    SingleTaskView(singleTaskVM: singleTaskVM)
                 }
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     HStack {
@@ -38,14 +39,14 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct SingleTaskView: View {
-    let task: Task
+    @ObservedObject var singleTaskVM: SingleTaskViewModel
     
     var body: some View {
         HStack {
-            Image(systemName: task.completed ? "checkmark.circle.fill" : "circle")
+            Image(systemName: singleTaskVM.task.completed ? "checkmark.circle.fill" : "circle")
                 .resizable()
                 .frame(width: 20, height: 20)
-            Text(task.title)
+            Text(singleTaskVM.task.title)
                 .padding()
         }
     }
