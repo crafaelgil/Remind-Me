@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B6BB43ECD036F55288CD8811 /* Pods_Remind_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D52693C783BACBB3D863711 /* Pods_Remind_Me.framework */; };
+		CD0E04EB267B98B300D03541 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0E04EA267B98B300D03541 /* TaskRepository.swift */; };
 		CD24A86D267A276900B69192 /* Remind_MeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A86C267A276900B69192 /* Remind_MeApp.swift */; };
 		CD24A86F267A276900B69192 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A86E267A276900B69192 /* TaskListView.swift */; };
 		CD24A871267A276C00B69192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD24A870267A276C00B69192 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		1D52693C783BACBB3D863711 /* Pods_Remind_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remind_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CFC471A380B2C5E10C3DFF /* Pods-Remind Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remind Me.debug.xcconfig"; path = "Target Support Files/Pods-Remind Me/Pods-Remind Me.debug.xcconfig"; sourceTree = "<group>"; };
 		75DB7165C2FDF07CBB417107 /* Pods-Remind Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remind Me.release.xcconfig"; path = "Target Support Files/Pods-Remind Me/Pods-Remind Me.release.xcconfig"; sourceTree = "<group>"; };
+		CD0E04EA267B98B300D03541 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		CD24A869267A276900B69192 /* Remind Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remind Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD24A86C267A276900B69192 /* Remind_MeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remind_MeApp.swift; sourceTree = "<group>"; };
 		CD24A86E267A276900B69192 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD0E04E9267B989C00D03541 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CD0E04EA267B98B300D03541 /* TaskRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		CD24A860267A276900B69192 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 		CD24A86B267A276900B69192 /* Remind Me */ = {
 			isa = PBXGroup;
 			children = (
+				CD0E04E9267B989C00D03541 /* Repositories */,
 				CD24A87F267A383B00B69192 /* ViewModel */,
 				CD24A87C267A29B500B69192 /* Model */,
 				CD24A87B267A29A100B69192 /* Views */,
@@ -124,7 +135,6 @@
 				56CFC471A380B2C5E10C3DFF /* Pods-Remind Me.debug.xcconfig */,
 				75DB7165C2FDF07CBB417107 /* Pods-Remind Me.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -243,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0E04EB267B98B300D03541 /* TaskRepository.swift in Sources */,
 				CD24A86F267A276900B69192 /* TaskListView.swift in Sources */,
 				CD24A881267A386000B69192 /* SingleTaskViewModel.swift in Sources */,
 				CD24A87E267A29CA00B69192 /* Task.swift in Sources */,
@@ -305,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -360,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -11,10 +11,11 @@ import Firebase
 @main
 struct Remind_MeApp: App {
     
-    init() {
-        FirebaseApp.configure()
-        authenticationService.signIn()
-      }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+//    init() {
+//        FirebaseApp.configure()
+//      }
     
     var body: some Scene {
         WindowGroup {
@@ -23,3 +24,10 @@ struct Remind_MeApp: App {
     }
 }
 
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
+}
