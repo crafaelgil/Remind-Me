@@ -9,15 +9,26 @@ import SwiftUI
 
 struct TaskListView: View {
     @ObservedObject var tasksListVM = TasksListViewModel()
+    
     let tasks = testDataTasks
+    
+    @State var presentAddNewItem = false
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                List(tasksListVM.tasksListViewModel) { singleTaskVM in
-                    SingleTaskView(singleTaskVM: singleTaskVM)
+                List {
+                    ForEach(tasksListVM.tasksListViewModel) { singleTaskVM in
+                        SingleTaskView(singleTaskVM: singleTaskVM)
+                    }
+                    if presentAddNewItem {
+                        SingleTaskView(singleTaskVM: SingleTaskViewModel(task: Task(title: "", completed: false))) { task in
+                            self.tasksListVM.addTask(task: task)
+                            self.presentAddNewItem.toggle()
+                        }
+                    }
                 }
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: { self.presentAddNewItem.toggle() }) {
                     HStack {
                         Image(systemName: "plus.circle.fill")
                             .resizable()
@@ -41,12 +52,19 @@ struct ContentView_Previews: PreviewProvider {
 struct SingleTaskView: View {
     @ObservedObject var singleTaskVM: SingleTaskViewModel
     
+    var onCommit: (Task) -> (Void) = { _ in }
+    
     var body: some View {
         HStack {
             Image(systemName: singleTaskVM.task.completed ? "checkmark.circle.fill" : "circle")
                 .resizable()
                 .frame(width: 20, height: 20)
-            Text(singleTaskVM.task.title)
+                .onTapGesture {
+                    singleTaskVM.task.completed.toggle()
+                }
+            TextField("Add new item to the list", text: $singleTaskVM.task.title, onCommit: {
+                self.onCommit(self.singleTaskVM.task)
+            })
                 .padding()
         }
     }

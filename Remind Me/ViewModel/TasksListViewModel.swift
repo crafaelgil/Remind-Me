@@ -16,4 +16,10 @@ class TasksListViewModel: ObservableObject {
             SingleTaskViewModel(task: task)
         }
     }
+    
+    func addTask(task: Task) {
+        let taskVM = SingleTaskViewModel(task: task)
+        
+        self.tasksListViewModel.append(taskVM)
+    }
 }
