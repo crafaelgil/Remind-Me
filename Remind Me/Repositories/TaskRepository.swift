@@ -15,8 +15,12 @@ class TaskRepository: ObservableObject {
     
     @Published var tasks = [Task]()
     
+    init() {
+        loadData()
+    }
+    
     func loadData() {
-        db.collection("task").addSnapshotListener { (querySnapshot, error) in
+        db.collection("tasks").addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.tasks = querySnapshot.documents.compactMap { document in
                     try? document.data(as: Task.self)

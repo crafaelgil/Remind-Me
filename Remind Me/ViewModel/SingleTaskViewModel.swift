@@ -27,7 +27,7 @@ class SingleTaskViewModel: ObservableObject, Identifiable {
             .store(in: &cancellable)
         
         $task
-            .map{ task in
+            .compactMap{ task in
                 task.id
             }
             .assign(to: \.id, on: self)

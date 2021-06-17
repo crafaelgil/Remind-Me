@@ -11,11 +11,11 @@ import Firebase
 @main
 struct Remind_MeApp: App {
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+//    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-//    init() {
-//        FirebaseApp.configure()
-//      }
+    init() {
+        FirebaseApp.configure()
+      }
     
     var body: some Scene {
         WindowGroup {
