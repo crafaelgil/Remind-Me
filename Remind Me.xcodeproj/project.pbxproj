@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6BB43ECD036F55288CD8811 /* Pods_Remind_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D52693C783BACBB3D863711 /* Pods_Remind_Me.framework */; };
 		CD24A86D267A276900B69192 /* Remind_MeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A86C267A276900B69192 /* Remind_MeApp.swift */; };
 		CD24A86F267A276900B69192 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A86E267A276900B69192 /* TaskListView.swift */; };
 		CD24A871267A276C00B69192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD24A870267A276C00B69192 /* Assets.xcassets */; };
@@ -14,9 +15,13 @@
 		CD24A87E267A29CA00B69192 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A87D267A29CA00B69192 /* Task.swift */; };
 		CD24A881267A386000B69192 /* SingleTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A880267A386000B69192 /* SingleTaskViewModel.swift */; };
 		CD24A883267A451B00B69192 /* TasksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A882267A451B00B69192 /* TasksListViewModel.swift */; };
+		CD9C3A73267B1D870013D463 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD9C3A72267B1D870013D463 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D52693C783BACBB3D863711 /* Pods_Remind_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remind_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CFC471A380B2C5E10C3DFF /* Pods-Remind Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remind Me.debug.xcconfig"; path = "Target Support Files/Pods-Remind Me/Pods-Remind Me.debug.xcconfig"; sourceTree = "<group>"; };
+		75DB7165C2FDF07CBB417107 /* Pods-Remind Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remind Me.release.xcconfig"; path = "Target Support Files/Pods-Remind Me/Pods-Remind Me.release.xcconfig"; sourceTree = "<group>"; };
 		CD24A869267A276900B69192 /* Remind Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remind Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD24A86C267A276900B69192 /* Remind_MeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remind_MeApp.swift; sourceTree = "<group>"; };
 		CD24A86E267A276900B69192 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
@@ -25,6 +30,7 @@
 		CD24A87D267A29CA00B69192 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		CD24A880267A386000B69192 /* SingleTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskViewModel.swift; sourceTree = "<group>"; };
 		CD24A882267A451B00B69192 /* TasksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModel.swift; sourceTree = "<group>"; };
+		CD9C3A72267B1D870013D463 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +38,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BB43ECD036F55288CD8811 /* Pods_Remind_Me.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9056068F33FC720A53A567A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D52693C783BACBB3D863711 /* Pods_Remind_Me.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CD24A860267A276900B69192 = {
 			isa = PBXGroup;
 			children = (
 				CD24A86B267A276900B69192 /* Remind Me */,
 				CD24A86A267A276900B69192 /* Products */,
+				DF8B3D982C29921D805B3E67 /* Pods */,
+				9056068F33FC720A53A567A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +79,7 @@
 				CD24A87B267A29A100B69192 /* Views */,
 				CD24A86C267A276900B69192 /* Remind_MeApp.swift */,
 				CD24A870267A276C00B69192 /* Assets.xcassets */,
+				CD9C3A72267B1D870013D463 /* GoogleService-Info.plist */,
 				CD24A872267A276C00B69192 /* Preview Content */,
 			);
 			path = "Remind Me";
@@ -100,6 +118,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DF8B3D982C29921D805B3E67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56CFC471A380B2C5E10C3DFF /* Pods-Remind Me.debug.xcconfig */,
+				75DB7165C2FDF07CBB417107 /* Pods-Remind Me.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD24A877267A276C00B69192 /* Build configuration list for PBXNativeTarget "Remind Me" */;
 			buildPhases = (
+				DDA7BD1C4127F80BCDD0855C /* [CP] Check Pods Manifest.lock */,
 				CD24A865267A276900B69192 /* Sources */,
 				CD24A866267A276900B69192 /* Frameworks */,
 				CD24A867267A276900B69192 /* Resources */,
+				C134A7FB9C67798FD56E3A41 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,7 +166,7 @@
 				};
 			};
 			buildConfigurationList = CD24A864267A276900B69192 /* Build configuration list for PBXProject "Remind Me" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -160,10 +190,53 @@
 			files = (
 				CD24A874267A276C00B69192 /* Preview Assets.xcassets in Resources */,
 				CD24A871267A276C00B69192 /* Assets.xcassets in Resources */,
+				CD9C3A73267B1D870013D463 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C134A7FB9C67798FD56E3A41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Remind Me/Pods-Remind Me-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Remind Me/Pods-Remind Me-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Remind Me/Pods-Remind Me-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDA7BD1C4127F80BCDD0855C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Remind Me-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CD24A865267A276900B69192 /* Sources */ = {
@@ -299,6 +372,7 @@
 		};
 		CD24A878267A276C00B69192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56CFC471A380B2C5E10C3DFF /* Pods-Remind Me.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -329,6 +403,7 @@
 		};
 		CD24A879267A276C00B69192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75DB7165C2FDF07CBB417107 /* Pods-Remind Me.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

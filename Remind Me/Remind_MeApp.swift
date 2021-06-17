@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct Remind_MeApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+        authenticationService.signIn()
+      }
+    
     var body: some Scene {
         WindowGroup {
             TaskListView()
         }
     }
 }
+
