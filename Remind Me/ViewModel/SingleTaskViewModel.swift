@@ -7,8 +7,10 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class SingleTaskViewModel: ObservableObject, Identifiable {
+    @Published var taskRepository = TaskRepository()
     @Published var task: Task
     
     var id = ""
@@ -31,6 +33,14 @@ class SingleTaskViewModel: ObservableObject, Identifiable {
                 task.id
             }
             .assign(to: \.id, on: self)
+            .store(in: &cancellable)
+        
+        $task
+            .dropFirst()
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .sink {task in
+                self.taskRepository.updateTask(task: task)
+            }
             .store(in: &cancellable)
     }
 }
