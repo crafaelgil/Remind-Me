@@ -6,6 +6,7 @@ target 'Remind Me' do
   use_frameworks!
 
   # Pods for Remind Me
+  pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'

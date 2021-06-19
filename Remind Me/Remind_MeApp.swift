@@ -15,6 +15,7 @@ struct Remind_MeApp: App {
     
     init() {
         FirebaseApp.configure()
+        Auth.auth().signInAnonymously()
       }
     
     var body: some Scene {
