@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct SignInView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             Text("Thank you for using my application")
             SignInWithAppleButton()
                 .frame(width: 280, height: 45)
+                .onTapGesture {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
         }
     }
 }

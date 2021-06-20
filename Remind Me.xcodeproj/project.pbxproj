@@ -18,6 +18,7 @@
 		CD24A883267A451B00B69192 /* TasksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24A882267A451B00B69192 /* TasksListViewModel.swift */; };
 		CD40B545267E2FF100B6B023 /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD40B544267E2FF100B6B023 /* SignInWithAppleView.swift */; };
 		CD40B547267E30FC00B6B023 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD40B546267E30FC00B6B023 /* SignInView.swift */; };
+		CD40B54A267ED9ED00B6B023 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD40B549267ED9ED00B6B023 /* SignInWithAppleCoordinator.swift */; };
 		CD9C3A73267B1D870013D463 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD9C3A72267B1D870013D463 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		CD24A882267A451B00B69192 /* TasksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModel.swift; sourceTree = "<group>"; };
 		CD40B544267E2FF100B6B023 /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
 		CD40B546267E30FC00B6B023 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		CD40B549267ED9ED00B6B023 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
 		CD9C3A72267B1D870013D463 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 		CD24A86B267A276900B69192 /* Remind Me */ = {
 			isa = PBXGroup;
 			children = (
+				CD40B548267ED9D500B6B023 /* Services */,
 				CD0E04E9267B989C00D03541 /* Repositories */,
 				CD24A87F267A383B00B69192 /* ViewModel */,
 				CD24A87C267A29B500B69192 /* Model */,
@@ -133,6 +136,14 @@
 				CD24A882267A451B00B69192 /* TasksListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD40B548267ED9D500B6B023 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CD40B549267ED9ED00B6B023 /* SignInWithAppleCoordinator.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DF8B3D982C29921D805B3E67 /* Pods */ = {
@@ -262,6 +273,7 @@
 				CD0E04EB267B98B300D03541 /* TaskRepository.swift in Sources */,
 				CD24A86F267A276900B69192 /* TaskListView.swift in Sources */,
 				CD24A881267A386000B69192 /* SingleTaskViewModel.swift in Sources */,
+				CD40B54A267ED9ED00B6B023 /* SignInWithAppleCoordinator.swift in Sources */,
 				CD40B545267E2FF100B6B023 /* SignInWithAppleView.swift in Sources */,
 				CD24A87E267A29CA00B69192 /* Task.swift in Sources */,
 				CD24A86D267A276900B69192 /* Remind_MeApp.swift in Sources */,
