@@ -70,7 +70,7 @@ extension SignInWithAppleCoordinator: ASAuthorizationControllerDelegate {
                                                 idToken: idTokenString,
                                                 rawNonce: nonce)
       // Sign in with Firebase.
-      Auth.auth().signIn(with: credential) { (authResult, error) in
+        Auth.auth().currentUser?.link(with: credential) { (authResult, error) in
         if error != nil{
             print("Error signing in: \(error?.localizedDescription ?? "")")
         }
