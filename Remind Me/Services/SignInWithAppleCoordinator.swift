@@ -71,9 +71,19 @@ extension SignInWithAppleCoordinator: ASAuthorizationControllerDelegate {
                                                 rawNonce: nonce)
       // Sign in with Firebase.
         Auth.auth().currentUser?.link(with: credential) { (authResult, error) in
-        if error != nil{
-            print("Error signing in: \(error?.localizedDescription ?? "")")
-        }
+            if let error = error, (error as NSError).code == AuthErrorCode.credentialAlreadyInUse.rawValue {
+                print("The user you're trying to sign in has already been linked")
+                if let updatedCredential = (error as NSError).userInfo[AuthErrorUserInfoUpdatedCredentialKey] as? OAuthCredential {
+                    print("Sign in using the updated credentials")
+                    Auth.auth().signIn(with: updatedCredential) { (authResult, error) in
+                        if (authResult?.user) != nil {
+                            if let callback = self.onSignedIn {
+                                callback()
+                            }
+                        }
+                    }
+                }
+            }
           else {
               if let callback = self.onSignedIn {
                   callback()
