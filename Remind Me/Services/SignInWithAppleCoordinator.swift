@@ -11,6 +11,8 @@ import AuthenticationServices
 import Firebase
 
 class SignInWithAppleCoordinator: NSObject, ASAuthorizationControllerPresentationContextProviding{
+    private var onSignedIn: (() -> Void)?
+    
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return UIApplication.shared.windows.first!
     }
@@ -19,7 +21,9 @@ class SignInWithAppleCoordinator: NSObject, ASAuthorizationControllerPresentatio
     fileprivate var currentNonce: String?
 
     @available(iOS 13, *)
-    func startSignInWithAppleFlow() {
+    func startSignInWithAppleFlow(onSignedIn: @escaping () -> Void) {
+        self.onSignedIn = onSignedIn
+        
       let nonce = randomNonceString()
       currentNonce = nonce
       let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -65,18 +69,17 @@ extension SignInWithAppleCoordinator: ASAuthorizationControllerDelegate {
       let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                 idToken: idTokenString,
                                                 rawNonce: nonce)
-//      // Sign in with Firebase.
-//      Auth.auth().signIn(with: credential) { (authResult, error) in
-//        if error {
-//          // Error. If error.code == .MissingOrInvalidNonce, make sure
-//          // you're sending the SHA256-hashed nonce as a hex string with
-//          // your request to Apple.
-//          print(error.localizedDescription)
-//          return
-//        }
-//        // User is signed in to Firebase with Apple.
-//        // ...
-//      }
+      // Sign in with Firebase.
+      Auth.auth().signIn(with: credential) { (authResult, error) in
+        if error != nil{
+            print("Error signing in: \(error?.localizedDescription ?? "")")
+        }
+          else {
+              if let callback = self.onSignedIn {
+                  callback()
+              }
+          }
+      }
     }
   }
 
